@@ -165,6 +165,7 @@ footer{margin-top:48px;color:var(--muted);font-size:.85rem}
 """
 
 SEARCH_JS = """<script>
+if(!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent))document.querySelectorAll('a[href^="https://m.blog.naver.com/"]').forEach(a=>a.href=a.href.replace('://m.blog','://blog'));
 const q=document.getElementById('q');q&&q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();
 document.querySelectorAll('ol.posts li').forEach(li=>{li.style.display=!v||li.textContent.toLowerCase().includes(v)?'':'none'})});
 </script>"""
